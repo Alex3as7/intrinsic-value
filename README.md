@@ -2,6 +2,7 @@
 
 
 Kivy is utilised in order to provide simple and sustainable GUI components to the program
+
 Uses the Yahoo Finance Api and BeautifulSoup4 to analyse financial data and calculate the intrinsic value of a valid stock using an adjusted Benjamin Graham formula, which is:
 
 V = (EPS * (7 x g) * AAA)/Y 
