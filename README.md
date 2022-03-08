@@ -23,3 +23,6 @@ Y = the current yield on AAA corporate bonds.
 
 TO USE:
 Make sure all requirements listed above are installed, and add the API key of your yahoo finance account to the 'api_key.json' file.
+
+
+Mass_analysis allows stock lists to be analysed when they are entered into the stocks.txt file
