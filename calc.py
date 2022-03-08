@@ -18,7 +18,10 @@ def get_g(ticker):
 
     g = g.replace('%','')
     
-    return float(g)
+    if g == 'N/A':
+        return 10
+    else:
+        return float(g)
 
 def get_aaa():
 

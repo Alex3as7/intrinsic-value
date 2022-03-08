@@ -83,7 +83,10 @@ class Intr(App):
         try:
 
             data = request_data(self.user.text.upper())
+
             current_price = data[0]['ask']
+            if current_price == 0:
+                current_price = data[0]["regularMarketPrice"]
             long_name = data[0]['longName']
             self.stock.text = f'Stock: {long_name}'
             self.current.text = f'Current Price: £{current_price}'
@@ -92,16 +95,17 @@ class Intr(App):
             aaa = get_aaa()
             calc = calc_value(current_price,eps,growth,aaa)
             int_val, buy, upside = calc['int_val'],calc['buy'],calc['upside']
-
+            print(int_val, upside)
 
             self.intrinsic.text = f'Intrinsic Value: £{int_val:.2f}'
             self.upside.text = f'Upside: {upside:.2f}%'
             self.buy.text = f'Buy or Sell: {buy}'
 
-            self.error.text = f"Error in fetching data for {self.user.text.upper()}. Either ticker is incorrect, or Yahoo Finance doesn't have enough data to \nperform the necessary calculations"
+            
 
         except Exception as e:
             self.error.text = f"Error in fetching data for {self.user.text.upper()}. Either ticker is incorrect, Yahoo Finance doesn't have enough data to \nperform the necessary calculations, or daily API calls have expired"
+            print(e)
             self.intrinsic.text = f'Intrinsic Value: N/A'
             self.upside.text = f'Upside: N/A'
             self.buy.text = f'Buy or Sell: N/A'
