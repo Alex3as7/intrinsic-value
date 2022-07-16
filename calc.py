@@ -1,9 +1,7 @@
 import requests,json
 from bs4 import BeautifulSoup
 
-one_g = 1
-corp_bond = 4.4
-pe = 7
+corp_bond = 3.94
 
 def get_g(ticker):
 
@@ -19,7 +17,7 @@ def get_g(ticker):
     g = g.replace('%','')
     
     if g == 'N/A':
-        return 10
+        return 1
     else:
         return float(g)
 
@@ -41,7 +39,7 @@ def get_aaa():
 
 def calc_value(current_price,eps,g,aaa):
 
-    val = (eps*(pe+(one_g*g))*corp_bond)/aaa
+    val = (eps*(8.5+(2*g))*corp_bond)/aaa
     upside = (val/current_price-1)*100
 
     if val > current_price:
