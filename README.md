@@ -1,9 +1,7 @@
 # intrinsic-value
 
 
-Kivy is utilised in order to provide simple and sustainable GUI components to the program
-
-Uses the Yahoo Finance Api and BeautifulSoup4 to analyse financial data and calculate the intrinsic value of a valid stock using an adjusted Benjamin Graham formula, which is:
+Calculates the intrinsic value of a stock or ETF using the (adjusted) Benjamin Graham formula, which is:
 
 V = (EPS * (8.5 + 2g) * AAA)/Y 
 
@@ -21,8 +19,3 @@ AAA = the average yield of AAA corporate bonds in 1962 (Graham did not specify t
 Y = the current yield on AAA corporate bonds.
 
 
-TO USE:
-Make sure all requirements listed above are installed, and add the API key of your yahoo finance account to the 'api_key.json' file.
-
-
-Mass_analysis allows stock lists to be analysed when they are entered into the stocks.txt file
